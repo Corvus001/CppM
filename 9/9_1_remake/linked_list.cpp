@@ -31,8 +31,20 @@ Linked_list::~Linked_list() {
 //---------------------METHODS--------------------------------
 //------------------------------------------------------------
 
-Linked_list::print() {
+Linked_list::print() {						// PRINT: Print Linked_List val's, starting from head
 
-	
-		
+	Linked_list_node* iter = _head;
+	while (iter != NULL) {
+		cout << iter->get_value() << ' ';
+		iter = iter.get_next();
+	}
+	cout << endl;
+	return;
+}	
+
+Lined_list::insert(int val, int pos) {
+
+	if (_size < pos) return false;
+
+	Linked_list_node* iterator;
 	
