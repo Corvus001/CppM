@@ -1,8 +1,0 @@
-Classes Part I: Syntax and Memory
-
-1) Implement linked_list as class LinkedList, developing the function for printing as in the example for Fraction.
-
-2) Adapt linked_list insert, remove and free.
-
-3) Adapt linked_list tests, and check that there is no leak with valgrind (no more than 72,704 reachable bytes at exit).
-
