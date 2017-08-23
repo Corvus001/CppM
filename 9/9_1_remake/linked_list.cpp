@@ -42,9 +42,32 @@ Linked_list::print() {						// PRINT: Print Linked_List val's, starting from hea
 	return;
 }	
 
-Lined_list::insert(int val, int pos) {
+
+// INSERT-----------------------------------------------------
+bool Lined_list::insert(int val, int pos) {
 
 	if (_size < pos) return false;
 
-	Linked_list_node* iterator;
-	
+	if (pos == 0) {
+		Linked_list_node* new_node = new Linked_list_node(val, _head->get_next());
+		_head = new_node;
+		_size++;
+
+		return true;
+	}	
+
+	Linked_list_node* iterator = _head;
+	int i = 0;
+	while (i<_size) {
+		if (i == pos) {
+			Linked_list_node* new_node = new Linked_list_node(val, iterator->get_next());
+			iterator->link(new_node);
+		}
+		iterator = iterator->get_next();
+		size++;
+		return true;
+	}
+	return false;
+}
+
+// REMOVE------------------------------------------------------
