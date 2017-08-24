@@ -44,12 +44,12 @@ Linked_list::print() {						// PRINT: Print Linked_List val's, starting from hea
 
 
 // INSERT-----------------------------------------------------
-bool Lined_list::insert(int val, int pos) {
+bool Linked_list::insert(int val, int pos) {
 
 	if (_size < pos) return false;
 
 	if (pos == 0) {
-		Linked_list_node* new_node = new Linked_list_node(val, _head->get_next());
+		Linked_list_node* new_node = new Linked_list_node(val, _head);
 		_head = new_node;
 		_size++;
 
@@ -62,10 +62,11 @@ bool Lined_list::insert(int val, int pos) {
 		if (i == pos) {
 			Linked_list_node* new_node = new Linked_list_node(val, iterator->get_next());
 			iterator->link(new_node);
+			_size++;
+			return true;
 		}
 		iterator = iterator->get_next();
-		size++;
-		return true;
+		i++;
 	}
 	return false;
 }
