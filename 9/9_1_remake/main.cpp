@@ -14,5 +14,7 @@ int main() {
 	l.print();
 	l.insert(4,3);
 	l.print();
+	l.insert(6,55555);
+	l.print();
 
 }
