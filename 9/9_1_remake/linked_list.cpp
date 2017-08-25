@@ -77,13 +77,42 @@ bool Linked_list::insert(int val, int pos) {
 // REMOVE------------------------------------------------------
 
 
+bool Linked_list::remove(int val) {
+	
+	if (_size == 0) {
+		return false;
+	}
 
+	Linked_list_node* iterator = _head;
+	Linked_list_node* prev_node = _head;
 
+	while (true) {
 
+		if (iterator == NULL) {				// If we got to the end of the list, return false.
+			return false;
+		}
 
+		// First element removal
+		if (iterator == _head && iterator->get_value() == val) {
+			
+			_head = iterator->get_next();
+			delete iterator;
+			_size--;
+			return true;
+		}
 
+		// Removal in the middle or end
+		if (iterator->get_value() == val) {
+			prev_node->link(iterator->get_next());
+			delete iterator;
+			_size--;
+			return true;
+		}
 
-
+		prev_node = iterator;
+		iterator = iterator->get_next();
+	}
+}
 
 
 // SIZE--------------------------------------------------------
@@ -92,14 +121,5 @@ size_t Linked_list::size() {
 
 	return _size;
 }
-
-
-
-
-
-
-
-
-
 
 
