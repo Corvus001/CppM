@@ -52,12 +52,13 @@ bool Linked_list::insert(int val, int pos) {
 	if (pos == 0) {
 
 		Linked_list_node* new_node;
-		new_node = new Linked_list_node(val, NULL);
+		new_node = new Linked_list_node(val, _head);
 		_head = new_node;
 		_size++;	
 
 		return true;
 	}
+	// Insert at middle or end.
 
 	Linked_list_node* _prev_node = _head;
 
@@ -85,7 +86,12 @@ bool Linked_list::insert(int val, int pos) {
 
 
 
+// SIZE--------------------------------------------------------
 
+size_t Linked_list::size() {
+
+	return _size;
+}
 
 
 
