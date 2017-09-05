@@ -1,0 +1,13 @@
+Classes II: Encapsulation and type safety
+
+Encapsulation is one of the three pilars of object oriented design, and the lack of it is large software architectures the main cause of huge increase in avoidable complexity, like the one seen in the software crisis.
+
+Basic data encapsulation is achieved by using private fields and public methods that do not permit other objects get ownership of the exposed data. In this this homework, we are going to work with one of the three ways of achieving encapsulation, that is returning constant references.
+
+Additionally, some methods that do not modify information, could tell about their intentions, by adding the 'const' qualifier to the end of the method's signature (like print for example).
+
+1) Adapt linked list for managing strings.
+
+2) Create a Library class for handling books, simply by having a linked list for storing book's names. The library would need methods for adding books, and sharing the book's list safely.
+
+3) Create a program for asking a library for its book's list, and then prints it. Then create a program that instead of printing the list, tries to add a book to it. This last program should NOT be able to compile.
